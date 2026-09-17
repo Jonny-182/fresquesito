@@ -89,7 +89,7 @@ body {
 .hero-main {
     height: 60vh;
     background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
-                url('https://i.postimg.cc/0QmCC5r6/IMG-20190113-WA0019.png') no-repeat center top/cover;
+                url('../img/laguna.png') no-repeat center top/cover;
     display: flex;
     align-items: center;
     padding: 0 10%;
