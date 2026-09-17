@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FresQuesito - Tienda</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <nav class="navbar">
+        <a href="index.html" class="nav-logo">
+            <img src="https://i.postimg.cc/JzKM6Hp7/Logo-Fresquesito.png" alt="Logo"> 
+            FresQuesito
+        </a>
+        <button class="menu-toggle" id="btn-menu" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links" id="menu-lista">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="Nosotros.html">Nosotros</a></li>
+            <li><a href="Tienda.html">Tienda</a></li>
+            <li><a href="Recetas.html">Recetas</a></li>
+        </ul>
+    </nav>
+
+    <header class="hero-main">
+        <div class="hero-text">
+            <h1>Nuestros Productos</h1>
+        </div>
+        <img src="https://i.postimg.cc/JzKM6Hp7/Logo-Fresquesito.png" class="hero-logo-large" alt="Logo">
+    </header>
+
+    <main>
+        <p class="parrafo">Ofrecemos los mejores productos lácteos frescos y naturales. Quesos, yogures y cuajada artesanal elaborados con el cuidado que nos caracteriza.</p>
+
+        <section class="seccion-tienda">
+            <div class="grid-productos">
+                <!-- Producto 1: Cuajada -->
+                <div class="producto" data-id="cuajada">
+                    <div class="producto-img-wrapper">
+                        <img src="https://i.postimg.cc/rw0tBV2Z/cuajada.jpg" alt="Cuajada Artesanal">
+                    </div>
+                    <h3>Cuajada</h3>
+                                   
+                    <div class="producto-detalles">
+                        <select class="selector-presentacion" aria-label="Seleccionar presentación">
+                            <option value="Libra" data-precio="8000">Libra — $8.000</option>
+                        </select>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 2: Queso Tradicional -->
+                <div class="producto" data-id="queso-tradicional">
+                    <div class="producto-img-wrapper">
+                        <img src="https://i.postimg.cc/mrL1tLGR/queso.jpg" alt="Queso Tradicional Fresco">
+                    </div>
+                    <h3>Queso Tradicional</h3>
+                    
+                    <div class="producto-detalles">
+                        <select class="selector-presentacion" aria-label="Seleccionar presentación">
+                            <option value="Libra" data-precio="9500">Libra — $9.500</option>
+                            <option value="Bloque" data-precio="18000">Bloque — $18.000</option>
+                        </select>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 3: Yogur -->
+                <div class="producto" data-id="yogur">
+                    <div class="producto-img-wrapper">
+                        <img src="https://i.postimg.cc/s2gbjNK8/yogur1.png" alt="Yogur de Frutas">
+                    </div>
+                    <h3>Yogur</h3>
+                    
+                    <div class="producto-detalles">
+                        <select class="selector-presentacion" aria-label="Seleccionar presentación">
+                            <option value="1 Litro" data-precio="7000">1 Litro — $7.000</option>
+                            <option value="2 Litros" data-precio="13000">2 Litros — $13.000</option>
+                            <option value="Vaso" data-precio="2500">Vaso — $2.500</option>
+                        </select>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 4: Queso Campesino -->
+                <div class="producto" data-id="queso-campesino">
+                    <div class="producto-img-wrapper">
+                        <img src="https://i.postimg.cc/mrL1tLGR/queso.jpg" alt="Queso Campesino Pasteurizado">
+                    </div>
+                    <h3>Queso Campesino</h3>
+                    
+                    <div class="producto-detalles">
+                        <select class="selector-presentacion" aria-label="Seleccionar presentación">
+                            <option value="Libra" data-precio="10000">Libra — $10.000</option>
+                        </select>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 5: Producto Especial -->
+                <div class="producto" data-id="producto-especial">
+                    <div class="producto-img-wrapper">
+                        <img src="https://i.postimg.cc/JzKM6Hp7/Logo-Fresquesito.png" alt="Producto especial de la casa">
+                    </div>
+                    <h3>Producto Especial</h3>
+                    
+                    <div class="producto-detalles">
+                        <select class="selector-presentacion" aria-label="Seleccionar presentación">
+                            <option value="Unidad" data-precio="12000">Precio — $12.000</option>
+                        </select>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+
+                <!-- Producto 6: Nuevo Producto -->
+                <div class="producto" data-id="producto-nuevo">
+                    <div class="producto-img-wrapper">
+                        <img src="https://i.postimg.cc/JzKM6Hp7/Logo-Fresquesito.png" alt="Lanzamiento Nuevo Producto">
+                    </div>
+                    <h3>Nuevo Producto</h3>
+                    
+                    <div class="producto-detalles">
+                        <select class="selector-presentacion" aria-label="Seleccionar presentación">
+                            <option value="Libra" data-precio="9000">Libra — $9.000</option>
+                            <option value="Kilo" data-precio="17000">Kilo — $17.000</option>
+                        </select>
+                        <button class="btn-add-cart">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CARDS INTERACTIVAS -->
+        <section class="main-wrapper">
+            <div class="card">
+                <div class="panel"><img src="https://i.postimg.cc/rw0tBV2Z/cuajada.jpg" alt="Imagen Informativa Cuajada"></div>
+                <div class="panel panel-text">
+                    <span class="product-title">CUAJADA</span>
+                    <p>Elaborada únicamente con leche entera fresca y cuajo, su sabor es la definición de la pureza láctea. Nuestra cuajada es un producto artesanal con un sabor delicado y una textura suave y húmeda. Es ideal para disfrutar con miel, panela, frutas o simplemente sola como un postre ligero y saludable.</p>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="panel panel-text">
+                    <span class="product-title">YOGURT</span>
+                    <p>Sumérgete en la frescura y sabor auténtico de nuestro yogur. Elaborado con leche fresca y de alta calidad. Es una opción nutritiva rica en probióticos que favorecen la digestión y fortalecen el sistema inmune. Ideal para consumir solo, con frutas, cereales o utilizar en postres caseros.</p>
+                </div>
+                <div class="panel"><img src="https://i.postimg.cc/s2gbjNK8/yogur1.png" alt="Imagen Informativa Yogur"></div>
+            </div>
+
+            <div class="card">
+                <div class="panel"><img src="https://i.postimg.cc/mrL1tLGR/queso.jpg" alt="Imagen Informativa Queso"></div>
+                <div class="panel panel-text">
+                    <span class="product-title">QUESO</span>
+                    <p>Prueba la tradición en cada bocado de nuestro Queso, caracterizado por su sabor lácteo, limpio y fresco. Producido de manera tradicional, este queso fresco ofrece un sabor suave y ligeramente salado. Su considerativa firme lo convierte en el acompañante perfecto para arepas, panes, ensaladas o cualquier preparación típica.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Botón Flotante del Carrito -->
+    <button class="cart-toggle-btn" id="cart-icon" aria-label="Ver carrito">
+        🛒 <span class="cart-count" id="cart-count">0</span>
+    </button>
+
+    <!-- Barra Lateral del Carrito con 3 Vistas Dinámicas -->
+    <div class="cart-sidebar" id="cart-sidebar">
+        
+        <!-- VISTA 1: RESUMEN DEL CARRITO -->
+        <div id="view-cart" style="display: flex; flex-direction: column; height: 100%;">
+            <div class="cart-header">
+                <h2>Tu Pedido</h2>
+                <button class="close-cart" id="close-cart" aria-label="Cerrar">&times;</button>
+            </div>
+            <div class="cart-items" id="cart-items">
+                <!-- Se inyecta dinámicamente con JS -->
+            </div>
+            <div class="cart-footer">
+                <div class="cart-total" style="font-size: 14px; color: #555; margin-bottom: 5px;">
+                    <span>Subtotal:</span>
+                    <span id="cart-subtotal">$0</span>
+                </div>
+                <div class="cart-total" style="font-size: 14px; color: #555; margin-bottom: 10px;">
+                    <span>Envío:</span>
+                    <span style="color: #25d366; font-weight: bold;">Gratis</span>
+                </div>
+                <div class="cart-total">
+                    <span>Total:</span>
+                    <span id="cart-total-val">$0</span>
+                </div>
+                <button onclick="goToCheckoutForm()" id="btn-checkout" class="btn-checkout" style="background-color: #6c757d; cursor: not-allowed;" disabled>
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+
+        <!-- VISTA 2: FORMULARIO DE ENVÍO Y CONTACTO -->
+        <div id="view-checkout-form" style="display: none; flex-direction: column; height: 100%; overflow-y: auto; padding: 20px;">
+            <button onclick="goToCartView()" style="background: none; border: none; color: var(--dark-green); text-align: left; font-weight: bold; cursor: pointer; margin-bottom: 20px; font-family: 'Quicksand', sans-serif;">
+                ⬅ Regresar al carrito
+            </button>
+            
+            <h2 style="font-family: 'Bricolage Grotesque', sans-serif; color: var(--dark-green); margin: 0 0 20px 0;">Datos de Envío</h2>
+            
+            <form id="shipping-form" onsubmit="processFinalOrder(event)" style="display: flex; flex-direction: column; gap: 15px; font-family: 'Quicksand', sans-serif;">
+                <div>
+                    <label style="display: block; font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; margin-bottom: 5px;">Nombre Completo</label>
+                    <input type="text" id="cust-name" required style="width: 100%; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 14px;" placeholder="Juan Pérez">
+                </div>
+                
+                <div>
+                    <label style="display: block; font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; margin-bottom: 5px;">Correo Electrónico</label>
+                    <input type="email" id="cust-email" required style="width: 100%; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 14px;" placeholder="juan@correo.com">
+                </div>
+                
+                <div>
+                    <label style="display: block; font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; margin-bottom: 5px;">Teléfono</label>
+                    <input type="tel" id="cust-phone" required style="width: 100%; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 14px;" placeholder="3001234567">
+                </div>
+
+                <div>
+                    <label style="display: block; font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; margin-bottom: 5px;">Dirección de Residencia</label>
+                    <input type="text" id="cust-address" required style="width: 100%; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 14px;" placeholder="Calle 10 # 45-20">
+                </div>
+
+                <div>
+                    <label style="display: block; font-size: 12px; font-weight: bold; color: #555; text-transform: uppercase; margin-bottom: 5px;">Ciudad</label>
+                    <input type="text" id="cust-city" required style="width: 100%; border: 1px solid #ccc; border-radius: 8px; padding: 10px; font-size: 14px;" placeholder="Bogotá">
+                </div>
+
+                <div style="background-color: #f9f9f9; padding: 15px; border-radius: 8px; border: 1px solid #eee; margin-top: 10px;">
+                    <div style="display: flex; justify-content: space-between; font-weight: bold; color: var(--dark-green); font-size: 16px;">
+                        <span>Total a pagar:</span>
+                        <span id="form-total">$0</span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn-checkout" style="background-color: var(--dark-green); margin-top: 10px;">
+                    Finalizar Compra
+                </button>
+            </form>
+        </div>
+
+        <!-- VISTA 3: MENSAJE DE ÉXITO ESTILO EJEMPLO -->
+        <div id="view-success" style="display: none; flex-direction: column; justify-content: center; align-items: center; height: 100%; padding: 10px; background-color: #fafbfe;">
+            
+            <div class="success-card">
+                <div class="success-icon-circle">✓</div>
+                <h2 class="success-title">¡Gracias por tu compra!</h2>
+                <p class="success-text">Tu pedido ha sido registrado con éxito. Nos pondremos en contacto contigo pronto.</p>
+                <button onclick="resetToStore()" class="btn-success-action">
+                    Seguir comprando
+                </button>
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer>&copy; 2026 FresQuesito. Todos los derechos reservados.</footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
