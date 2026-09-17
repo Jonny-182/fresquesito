@@ -1,1 +1,1014 @@
+:root {
+    --verde-fondo: #fcf9ef; 
+    --gris-lateral: #94AA6C; 
+    --cian-promo: #b2d6db;
+    --dark-green: #1a4d2e;
+    --medium-green: #4f6f52;
+    --light-gray: #f4f4f4;
+    --text-white: #ffffff;
+    --whatsapp-color: #25d366;
+}
 
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--light-gray);
+    font-family: 'Quicksand', sans-serif;
+    overflow-x: hidden;
+}
+
+/* --- NAVEGACIÓN --- */
+.navbar {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 50px;
+    z-index: 100;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), transparent);
+}
+
+.nav-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1.5rem;
+    z-index: 110;
+}
+
+.nav-logo img { height: 40px; }
+
+.nav-links {
+    display: flex;
+    gap: 25px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links a {
+    color: var(--text-white);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover { opacity: 0.7; }
+
+/* --- BOTÓN HAMBURGUESA --- */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 6px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 110;
+    padding: 10px;
+}
+
+.menu-toggle span {
+    width: 30px;
+    height: 3px;
+    background-color: var(--text-white);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+/* --- HERO GENERAL --- */
+.hero-main {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), 
+                url('https://i.postimg.cc/0QmCC5r6/IMG-20190113-WA0019.png') no-repeat center top/cover;
+    display: flex;
+    align-items: center;
+    padding: 0 10%;
+    position: relative;
+}
+
+.hero-main.hero-short {
+    height: 50vh;
+}
+
+.hero-text {
+    color: var(--text-white);
+    max-width: 600px;
+}
+
+.hero-text h1 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.1;
+    margin: 0;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5);
+}
+
+.hero-logo-large {
+    position: absolute;
+    right: 10%;
+    bottom: 20%;
+    width: 200px;
+    filter: drop-shadow(2px 4px 10px rgba(0,0,0,0.5));
+}
+
+/* --- TÍTULOS GLOBALES --- */
+.title-styled {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: var(--dark-green);
+    background-color: #def7ff;
+    width: 700px;
+    text-align: center;
+    margin: 0 auto;
+    border-radius: 10px;
+}
+h2.title-styled { font-size: 1.8rem; margin-top: 0; }
+h3.title-styled { font-size: 1.5rem; text-align: left; margin: 40px 0 15px 0; }
+
+/* ==========================================================================
+   AGREGADO: ESTILOS EXCLUSIVOS PARA LA PÁGINA INDEX
+   ========================================================================== */
+
+/* --- SECCIÓN BANNER PROMOCIÓN --- */
+.banner-full {
+    width: 100%;
+    height: 250px;
+    background-color: var(--verde-fondo);
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    color: #722f37;
+}
+
+.banner-full::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 25%;
+    height: 100%;
+    background: var(--gris-lateral);
+    clip-path: ellipse(70% 100% at 0% 50%);
+    z-index: 1;
+}
+
+.promo-content {
+    flex: 2;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 15%;
+}
+
+.promo-content h2 {
+    margin: 0;
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    text-transform: uppercase;
+}
+
+.promo-tag {
+    background: var(--cian-promo);
+    color: #000;
+    display: inline-block;
+    padding: 10px 25px;
+    font-weight: 700;
+    margin-top: 15px;
+    border-radius: 50px;
+    text-decoration: none;
+    width: fit-content;
+    transition: all 0.3s ease;
+}
+
+.promo-tag:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.image-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2;
+    padding-right: 50px;
+    flex: 1;
+}
+
+.circle-container {
+    width: 160px;
+    height: 160px;
+    background: white;
+    border-radius: 50%;
+    border: 5px solid #adb5bd;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.circle-container img { 
+    width: 85%; 
+}
+
+.brand-sidebar {
+    width: 40px;
+    background: var(--gris-lateral);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.brand-sidebar span {
+    transform: rotate(90deg);
+    white-space: nowrap;
+    font-weight: 700;
+    font-size: 0.8rem;
+    color: white;
+}
+
+/* --- DISEÑO DE TARJETAS (CARDS BASE) --- */
+.section-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 25px;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.card-base {
+    position: relative;
+    height: 250px;
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    padding-bottom: 25px;
+    color: white;
+    transition: all 0.3s ease;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+    text-decoration: none;
+}
+
+.card-base:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.card-base::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, transparent 80%);
+    z-index: 1;
+}
+
+.card-info {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    width: 90%;
+    padding: 0 10px;
+}
+
+.card-info h3 {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.4rem;
+    margin: 0 0 5px 0;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+}
+
+.card-info p {
+    font-weight: 500;
+    font-size: 0.85rem;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.btn-discover {
+    display: inline-block;
+    background: rgba(148, 170, 108, 0.9); 
+    backdrop-filter: blur(4px);
+    padding: 8px 18px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 0.7rem;
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white;
+    margin-top: 12px;
+    text-transform: uppercase;
+}
+/* ==========================================================================
+   AGREGADO: ESTILOS EXCLUSIVOS PARA LA PÁGINA NOSOTROS / HISTORIA
+   ========================================================================== */
+
+/* --- CONTENIDO HISTORIA --- */
+.history-container {
+    max-width: 850px;
+    margin: 0 auto;
+    padding: 20px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Reducido de 20px a 15px */
+}
+
+/* 2. Controlamos los márgenes de los párrafos y títulos dentro de la estructura */
+.history-container p, 
+.history-container h2, 
+.history-container h3 {
+    margin-top: 0;
+    margin-bottom: 0; /* Resetea el espacio por defecto que empuja los textos */
+}
+
+.top-text {
+    font-size: 18px;
+    line-height: 1.4; /* Un interlineado sutilmente más compacto */
+    font-weight: 500;
+    text-align: justify;
+}
+
+.content-layout {
+    display: flex;
+    gap: 25px; /* Reducido de 35px a 25px para acercar la imagen al texto */
+    align-items: flex-start; /* Cambiado a flex-start para que el texto se alinee arriba con la imagen */
+    padding: 0.2px;
+}
+
+.image-box {
+    flex: 1.2;
+    border-radius: 15px;
+    overflow: hidden;
+    border: 3px solid #6c757d;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.1);
+}
+
+.image-box img { 
+    width: 100%; 
+    display: block; 
+    object-fit: cover; 
+}
+
+/* 3. Columna de texto lateral: control total del espacio interno */
+.side-text { 
+    flex: 1; 
+    display: flex; 
+    flex-direction: column; 
+    gap: 12px; /* Reducido de 15px a 12px para juntar los bloques de texto */
+    text-align: justify;
+}
+
+/* Separación específica para el título "Nuestra Oferta de Productos" */
+.side-text h2, 
+.side-text h3 {
+    margin-top: 10px; /* Le da un pequeño aire superior al título sin exagerar */
+    font-size: 22px;   /* Tamaño adecuado para jerarquía */
+}
+
+/* 4. Lista de productos más compacta */
+.list-products { 
+    padding-left: 20px; 
+    margin: 0; /* Elimina márgenes exteriores de la lista */
+    color: #004d00; 
+    font-weight: 700; 
+    display: flex;
+    flex-direction: column;
+    gap: 4px; /* Controla el espacio exacto entre cada ítem de la lista */
+}
+
+/* --- TESTIMONIOS --- */
+.testimonials-section {
+    background-color: #999999;
+    max-width: 850px;
+    max-height: 180px; 
+    border-radius: 12px;
+    padding: 10px 15px 15px 15px; 
+    margin: 40px auto 80px auto; 
+    text-align: center;
+}
+
+.section-subtitle { 
+    color: white; 
+    margin-bottom: 0.2px; 
+    font-size: 18px; 
+    font-weight: 100; 
+}
+
+.cards-row {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    /* CAMBIO: Como las tarjetas ahora son más bajas, un translateY menor basta para sacarlas la mitad */
+    transform: translateY(30px); 
+}
+
+.testimonial-card {
+    background: white;
+    border-radius: 12px;
+    padding: 15px; /* Más compacto por dentro */
+    flex: 1;
+    /* CAMBIO: Tarjetas más angostas (de 310px a 250px) */
+    max-width: 250px; 
+    box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+    text-align: left;
+}
+
+.avatar-circle { 
+    /* CAMBIO: Avatares un poco más pequeños (de 60px a 45px) */
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    border: 1.5px solid #333; 
+    overflow: hidden; 
+    margin-bottom: 8px; 
+}
+
+.avatar-circle img { 
+    width: 100%; 
+    height: 100%; 
+    object-fit: cover; 
+}
+
+.quote-text { 
+    /* CAMBIO: Texto un punto más pequeño para que quepa bien en la tarjeta chica */
+    font-size: 12px; 
+    line-height: 1.4; 
+    color: #333; 
+}
+
+.stars-container { 
+    color: #FFD700; 
+    margin-top: 8px; 
+    /* CAMBIO: Estrellas un poco más pequeñas */
+    font-size: 14px; 
+}
+
+/* --- AJUSTES RESPONSIVOS EXCLUSIVOS DE HISTORIA --- */
+@media (max-width: 768px) {
+    .content-layout { 
+        flex-direction: column; 
+    }
+    
+    .cards-row { 
+        flex-direction: column; 
+        align-items: center; 
+        transform: translateY(30px); 
+    }
+    
+    .testimonial-card { 
+        max-width: 100%; 
+    }
+    
+    .testimonials-section { 
+        margin-bottom: 250px; 
+    }
+}
+/* ==========================================================================
+   AGREGADO: ESTILOS EXCLUSIVOS PARA LA PÁGINA CONTACTO
+   ========================================================================== */
+
+.contact-section {
+    max-width: 900px; 
+    margin: 50px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.title-styled {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: #1a4d2e;
+    margin-bottom: 10px;
+}
+
+h2.title-styled { font-size: 38px; margin-top: 0; }
+
+h3.title-styled { 
+    font-size: 28px; 
+    text-align: left; 
+    margin: 40px 0 15px 0;
+}
+
+.subtitle {
+    font-size: 17px;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px; 
+    margin-bottom: 30px;
+}
+
+.contact-card {
+    background: white;
+    border: 1.2px solid #000;
+    border-radius: 20px;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    min-height: 90px;
+    transition: transform 0.2s;
+}
+
+.contact-card i {
+    font-size: 32px;
+    color: #000;
+    width: 60px;
+    flex-shrink: 0;
+    text-align: center;
+}
+
+.card-content {
+    flex-grow: 1;
+    text-align: center;
+    padding-right: 40px; 
+}
+
+.card-content label {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-bottom: 2px;
+}
+
+.card-content span {
+    display: block;
+    font-size: 17px; 
+    font-weight: 700;
+    color: #000;
+    line-height: 1.2;
+}
+
+.wholesale-banner {
+    background-color: #333;
+    color: white;
+    padding: 25px 35px;
+    border-radius: 20px;
+    text-align: left;
+    margin-top: 40px;
+}
+
+.wholesale-banner strong {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.wholesale-banner p {
+    margin: 0;
+    font-size: 16px;
+    opacity: 0.9;
+}
+
+/* --- GRID DE CONTENEDORES Y TARJETAS --- */
+.benefits-container, .seccion-tienda {
+    max-width: 1100px;
+    margin: 60px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* --- TIENDA ORIGINAL --- */
+.parrafo { color: #333; font-size: clamp(18px, 3vw, 24px); text-align: center; max-width: 1000px; margin: 40px auto; padding: 0 20px; line-height: 1.6; }
+.grid-productos { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 40px; margin-top: 50px; align-items: start; }
+
+.producto {
+    background: #fff;
+    border-radius: 20px;
+    padding: 24px;
+    margin-top: 60px; 
+    text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    overflow: visible; 
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.producto-img-wrapper {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -50%); 
+    width: 150px;  
+    height: 150px; 
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 5;
+}
+
+.producto-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.producto h3 { 
+    margin: 70px 0 0 0; 
+    font-size: 22px; 
+    font-weight: 700;
+    color: #004d40;
+    font-family: 'Bricolage Grotesque', sans-serif; 
+    transition: margin 0.4s ease;
+}
+
+.producto .producto-detalles {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transform: translateY(-10px);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    pointer-events: none;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+}
+
+.producto .selector-presentacion {
+    flex: 1.3 !important;
+    margin: 0 !important;
+    padding: 10px !important;
+}
+
+.producto .btn-add-cart {
+    flex: 1 !important;
+    margin-top: 0 !important;
+    padding: 11px !important;
+    white-space: nowrap !important;
+    background-color: var(--medium-green);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+
+.producto .btn-add-cart:hover {
+    background-color: var(--dark-green);
+}
+
+.producto:hover {
+    margin-top: 95px; 
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+.producto:hover .producto-img-wrapper {
+    width: calc(100% - 32px); 
+    height: 210px;
+    border-radius: 18px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.producto:hover h3 {
+    margin-top: 125px;
+}
+
+.producto:hover .producto-detalles {
+    max-height: 100px !important;
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    margin-top: 20px !important;
+    pointer-events: auto !important;
+}
+
+/* --- SECCIÓN CARDS INTERACTIVAS --- */
+.main-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
+    width: 100%;
+    height: 550px;
+    gap: 15px;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    flex: 1;
+    max-width: 33%;
+    background-color: #6c757d;
+    border-radius: 12px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    box-sizing: border-box;
+}
+
+.panel {
+    background-color: #e2e6ea;
+    border: 2px solid #555;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex: 1 1 50%; 
+    transition: flex 0.5s ease-in-out, background-color 0.3s;
+    position: relative;
+}
+
+.panel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+}
+
+.panel-text {
+    padding: 15px;
+    text-align: center;
+    color: #333;
+    box-sizing: border-box;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.panel-text p {
+    font-size: 18px;
+    margin: 0;
+    line-height: 1.3;
+    transition: opacity 0.4s ease;
+    font-weight: 500;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6; 
+    line-clamp: 6; 
+    overflow: hidden;
+}
+
+.product-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-weight: 800;
+    color: #004d00;
+    font-size: 30px;
+    margin-top: 8px;
+    display: block;
+    text-transform: uppercase;
+}
+
+.panel:hover {
+    flex: 3; 
+    background-color: #ffffff;
+    z-index: 2;
+}
+
+.card:hover .panel:not(:hover) {
+    flex: 0.5;
+}
+
+/* --- CARRITO FLOTANTE Y SIDEBAR --- */
+.cart-toggle-btn { position: fixed; bottom: 30px; right: 30px; background-color: var(--dark-green); color: white; border: none; width: 60px; height: 60px; border-radius: 50%; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.3); z-index: 1000; display: flex; justify-content: center; align-items: center; font-size: 24px; }
+.cart-count { position: absolute; top: -5px; right: -5px; background-color: red; color: white; font-size: 12px; font-weight: bold; padding: 4px 8px; border-radius: 50%; }
+.cart-sidebar { position: fixed; top: 0; right: -400px; width: 280px; height: 100vh; background-color: white; box-shadow: -5px 0 15px rgba(0,0,0,0.1); z-index: 2000; transition: right 0.3s ease; display: flex; flex-direction: column; }
+.cart-sidebar.open { right: 0}
+.cart-header { padding: 20px; background-color: var(--dark-green); color: white; display: flex; justify-content: space-between; align-items: center; }
+.cart-header h2 { margin: 0; font-family: 'Bricolage Grotesque', sans-serif; }
+.close-cart { background: none; border: none; color: white; font-size: 24px; cursor: pointer; }
+.cart-items { flex: 1; overflow-y: auto; padding: 20px; }
+.cart-item { display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #eee; }
+.item-details h4 { margin: 0 0 5px 0; color: var(--dark-green); }
+.item-details p { margin: 0; color: #555; font-size: 14px; }
+.item-qty-controls { display: flex; align-items: center; gap: 8px; margin-top: 5px; }
+.btn-qty { background-color: #e2e6ea; border: none; padding: 2px 8px; cursor: pointer; font-weight: bold; border-radius: 4px; }
+.btn-remove { background: none; border: none; color: red; cursor: pointer; font-size: 14px; }
+.cart-footer { padding: 20px; border-top: 2px solid #eee; background-color: #fafafa; }
+.cart-total { display: flex; justify-content: space-between; font-size: 18px; font-weight: bold; margin-bottom: 15px; color: var(--dark-green); }
+.btn-checkout { background-color: var(--whatsapp-color); color: white; border: none; width: 100%; padding: 15px; border-radius: 8px; font-size: 16px; font-weight: bold; cursor: pointer; transition: background 0.3s; }
+.btn-checkout:hover { background-color: #1ebe57; }
+
+footer {
+    background-color: gainsboro;
+    color: var(--dark-green);
+    padding: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* --- RESPONSIVO --- */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 20px; }
+    .menu-toggle { display: flex; }
+    .nav-links {
+        position: fixed;
+        top: 0; right: -100%;
+        width: 70%; height: 100vh;
+        background-color: var(--dark-green);
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        transition: 0.4s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.3);
+        z-index: 105;
+    }
+    .nav-links.active { right: 0; }
+    .hero-main { height: 40vh; text-align: center; justify-content: center; }
+    .hero-logo-large { display: none; }
+    .main-wrapper { flex-direction: column; height: auto; }
+    .card { max-width: 100%; }
+    .cart-sidebar { width: 100%; right: -100%; }
+}
+/* ==========================================================================
+   AGREGAR ESTO AL FINAL DE TU CSS ORIGINAL PARA AJUSTAR EL CARRITO
+   ========================================================================== */
+
+/* 1. Corrige el tamaño de la barra lateral para que sea compacta y estilizada */
+.cart-sidebar {
+    width: 380px !important; /* Fuerza el ancho ideal de e-commerce */
+    max-width: 100% !important; /* Evita que se salga en pantallas de celulares */
+}
+
+/* Ajuste automático para pantallas de teléfonos muy pequeños */
+@media (max-width: 480px) {
+    .cart-sidebar {
+        width: 100% !important;
+    }
+}
+
+/* 2. Estilos de la tarjeta de éxito (Inspirada exactamente en tu imagen de ejemplo) */
+.success-card {
+    background: #ffffff;
+    padding: 35px 25px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 320px;
+    margin: auto;
+}
+
+/* Círculo verde con el check del ejemplo */
+.success-icon-circle {
+    width: 70px;
+    height: 70px;
+    background-color: #e8f8f0;
+    color: #10b981;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 25px;
+}
+
+/* Título oscuro y llamativo */
+.success-title {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    color: #1f2937;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 0 12px 0;
+    text-align: center;
+}
+
+/* Texto descriptivo intermedio */
+.success-text {
+    font-family: 'Quicksand', sans-serif;
+    color: #4b5563;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0 0 30px 0;
+    text-align: center;
+}
+
+/* Botón morado/azul idéntico al de tu captura */
+.btn-success-action {
+    background-color: #5038ff; 
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: 'Quicksand', sans-serif;
+    transition: background 0.2s ease;
+}
+
+.btn-success-action:hover {
+    background-color: #402ad4;
+}
+/* ==========================================================================
+   AGREGADO: ESTILOS EXCLUSIVOS PARA LA PÁGINA RECETAS (TARJETAS 3D FLIP)
+   ========================================================================== */
+
+.flip-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 60px 20px;
+    box-sizing: border-box;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.card-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-title {
+    background: #fff;
+    color: #1a4d2e;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: bold;
+    border: 2px solid #1a4d2e;
+    margin-bottom: 15px;
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
+}
+
+.flip-card {
+    width: 280px; 
+    height: 360px;
+    perspective: 1000px;
+}
+
+.flip-card-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+    backface-visibility: hidden;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.flip-card-front img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.flip-card-back {
+    background: var(--dark-green);
+    color: white;
+    transform: rotateY(180deg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.flip-card-back a {
+    margin-top: 15px;
+    background: #FFD700;
+    color: #000;
+    padding: 8px 15px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 13px;
+    transition: background 0.3s;
+}
+
+.flip-card-back a:hover { 
+    background: #ffcc00; 
+}
