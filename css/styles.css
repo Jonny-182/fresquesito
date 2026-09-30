@@ -126,7 +126,10 @@ body {
     font-family: 'Bricolage Grotesque', sans-serif;
     color: var(--dark-green);
     background-color: #def7ff;
-    width: 700px;
+    width: 100%;
+    max-width: 700px;
+    box-sizing: border-box;
+    padding: 10px 20px;
     text-align: center;
     margin: 0 auto;
     border-radius: 10px;
@@ -204,6 +207,12 @@ h3.title-styled { font-size: 1.5rem; text-align: left; margin: 40px 0 15px 0; }
     flex: 1;
 }
 
+.image-section img {
+    width: 100%;        /* O un ancho máximo como max-width: 400px; */
+    height: auto;       /* Mantiene la proporción original de la foto */
+    object-fit: unset;  
+    border-radius: 0;   /* Elimina cualquier borde redondeado */
+}
 .circle-container {
     width: 160px;
     height: 160px;
@@ -217,7 +226,9 @@ h3.title-styled { font-size: 1.5rem; text-align: left; margin: 40px 0 15px 0; }
 }
 
 .circle-container img { 
-    width: 85%; 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .brand-sidebar {
@@ -397,6 +408,7 @@ h3.title-styled { font-size: 1.5rem; text-align: left; margin: 40px 0 15px 0; }
     padding: 10px 15px 15px 15px; 
     margin: 40px auto 80px auto; 
     text-align: center;
+    margin-bottom: 95px;
 }
 
 .section-subtitle { 
@@ -455,25 +467,10 @@ h3.title-styled { font-size: 1.5rem; text-align: left; margin: 40px 0 15px 0; }
     font-size: 14px; 
 }
 
-/* --- AJUSTES RESPONSIVOS EXCLUSIVOS DE HISTORIA --- */
-@media (max-width: 768px) {
-    .content-layout { 
-        flex-direction: column; 
-    }
-    
-    .cards-row { 
-        flex-direction: column; 
-        align-items: center; 
-        transform: translateY(30px); 
-    }
-    
-    .testimonial-card { 
-        max-width: 100%; 
-    }
-    
-    .testimonials-section { 
-        margin-bottom: 250px; 
-    }
+
+img {
+    max-width: 100%;
+    height: auto;
 }
 /* ==========================================================================
    AGREGADO: ESTILOS EXCLUSIVOS PARA LA PÁGINA CONTACTO
@@ -831,10 +828,63 @@ footer {
     .nav-links.active { right: 0; }
     .hero-main { height: 40vh; text-align: center; justify-content: center; }
     .hero-logo-large { display: none; }
-    .main-wrapper { flex-direction: column; height: auto; }
-    .card { max-width: 100%; }
+    .main-wrapper { height: auto !important;
+        flex-direction: column !important;
+        gap: 20px !important; }
+    .card { max-width: 100% !important;
+        height: auto !important; }
     .cart-sidebar { width: 100%; right: -100%; }
+    .panel {
+        flex: none !important;
+        height: 250px !important; /* Altura fija cómoda para ver imagen o texto por separado */
+        width: 100% !important;
+    }
+
+    /* 4. Aseguramos que el texto y la imagen se muestren completos sin recortes */
+    .panel-text p {
+        -webkit-line-clamp: unset !important;
+        line-clamp: unset !important;
+        overflow: visible !important;
+        font-size: 15px;
+    }
+    .testimonials-section { 
+        max-height: none !important;
+        height: auto !important;
+        padding: 15px 15px 20px 15px !important; /* Reducimos el relleno interno */
+        margin-top: 30px !important;
+        margin-bottom: 30px !important;}
+        .content-layout { 
+        flex-direction: column; 
+    }
+    
+    .cards-row { 
+        transform: none !important;
+        flex-direction: column !important;
+        align-items: center !important;
+        gap: 15px !important;
+        margin-top: 15px !important; 
+    }
+    
+    .testimonial-card { 
+        max-width: 100%; 
+    }
+    
+    .testimonials-section { 
+        max-height: none !important;
+        height: auto !important;
+        padding: 20px 15px 40px 15px !important;
+        margin-top: 60px !important;
+        margin-bottom: 40px !important; 
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+    .contact-card .card-content {
+        padding-right: 15px !important;
+    }
 }
+
 /* ==========================================================================
    AGREGAR ESTO AL FINAL DE TU CSS ORIGINAL PARA AJUSTAR EL CARRITO
    ========================================================================== */
@@ -1011,4 +1061,11 @@ footer {
 
 .flip-card-back a:hover { 
     background: #ffcc00; 
+}
+
+.card:hover .panel-text p,
+.panel:hover .panel-text p {
+    -webkit-line-clamp: unset !important;
+    line-clamp: unset !important;
+    overflow: visible !important;
 }
